@@ -10,4 +10,9 @@ public class MyConfiguration {
     public String applicationName(){
         return "Sistema de vendas";
     }
+
+    @Bean("applicationCategoty")
+    public String applicationCategoty(){
+        return "Sistema de vendas - Categoria";
+    }
 }

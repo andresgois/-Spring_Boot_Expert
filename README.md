@@ -153,6 +153,9 @@ server.servlet.context-path=/sistema-vendas
 - Várias configurações customizadas
 - [Application Properties](https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html)
 
+## Módulo 01
+- [Localhost](http://localhost:8085/sistema-vendas/hello)
+
 ### Trabalhando com multiplos ambientes e profiles
 
 ## Layout ou Deploy da Aplicação

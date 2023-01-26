@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="defec31f-8433-4404-aa66-a686f7d54dc5" name="Changes" comment=":sparkles: feat: propriedades do banco h2">
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/gtihub/andresgois/domain/entity/Cliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/gtihub/andresgois/domain/entity/ItemPedido.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/gtihub/andresgois/domain/entity/Pedido.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/gtihub/andresgois/domain/entity/Produto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/data.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/gtihub/andresgois/domain/repository/ClientesRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/gtihub/andresgois/VendasApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/gtihub/andresgois/VendasApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/gtihub/andresgois/domain/entity/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/gtihub/andresgois/domain/entity/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/gtihub/andresgois/domain/entity/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/gtihub/andresgois/domain/entity/Produto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

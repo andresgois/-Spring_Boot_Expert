@@ -2,11 +2,11 @@ package io.gtihub.andresgois.domain.entity;
 
 import java.math.BigDecimal;
 
-public class Produto {
-
-    private Integer id;
+public class Produto {private Integer id;
     private String descricao;
     private BigDecimal preco;
+
+
 
     public Produto() {
     }

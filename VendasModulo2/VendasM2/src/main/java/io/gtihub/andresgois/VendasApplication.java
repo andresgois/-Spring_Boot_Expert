@@ -1,6 +1,8 @@
 package io.gtihub.andresgois;
 
+import io.gtihub.andresgois.domain.entity.Cliente;
 import io.gtihub.andresgois.domain.entity.ClienteTeste;
+import io.gtihub.andresgois.domain.repository.ClienteRepository;
 import io.gtihub.andresgois.domain.repository.ClientesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -13,7 +15,7 @@ import java.util.List;
 @SpringBootApplication
 public class VendasApplication {
 
-    @Bean
+    //@Bean
     public CommandLineRunner init(@Autowired ClientesRepository repository){
         return args -> {
           ClienteTeste clienteTeste = new ClienteTeste();
@@ -49,6 +51,15 @@ public class VendasApplication {
             } else {
                 todos.forEach(System.out::println);
             }*/
+        };
+    }
+
+    @Bean
+    public CommandLineRunner iniciarComEntityManaged(@Autowired ClienteRepository repository){
+        return args -> {// ele gera um id autormático
+            Cliente cliente = new Cliente("Andre Gois");
+            repository.salvar(cliente);
+            System.out.println(cliente);
         };
     }
     public static void main(String[] args) {

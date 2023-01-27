@@ -1,6 +1,6 @@
 package io.gtihub.andresgois;
 
-import io.gtihub.andresgois.domain.entity.Cliente;
+import io.gtihub.andresgois.domain.entity.ClienteTeste;
 import io.gtihub.andresgois.domain.repository.ClientesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -16,14 +16,14 @@ public class VendasApplication {
     @Bean
     public CommandLineRunner init(@Autowired ClientesRepository repository){
         return args -> {
-          Cliente cliente = new Cliente();
-          cliente.setId(1);
-          cliente.setNome("Andre");
-          repository.salvaCliente(cliente);
+          ClienteTeste clienteTeste = new ClienteTeste();
+          clienteTeste.setId(1);
+          clienteTeste.setNome("Andre");
+          repository.salvaCliente(clienteTeste);
 
-          repository.salvaCliente(new Cliente(2,"Douglas"));
+          repository.salvaCliente(new ClienteTeste(2,"Douglas"));
 
-            List<Cliente> todos = repository.obterTodos();
+            List<ClienteTeste> todos = repository.obterTodos();
             todos.forEach(System.out::println);
 
             System.out.println("=============ATUALIZAR=================");
@@ -45,7 +45,7 @@ public class VendasApplication {
 
             todos = repository.obterTodos();
             if(todos.isEmpty()){
-                System.out.println("Nenhum cliente encontrado");
+                System.out.println("Nenhum clienteTeste encontrado");
             } else {
                 todos.forEach(System.out::println);
             }*/

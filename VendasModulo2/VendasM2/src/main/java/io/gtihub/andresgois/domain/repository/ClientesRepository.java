@@ -1,6 +1,6 @@
 package io.gtihub.andresgois.domain.repository;
 
-import io.gtihub.andresgois.domain.entity.Cliente;
+import io.gtihub.andresgois.domain.entity.ClienteTeste;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -13,46 +13,46 @@ import java.util.List;
 @Repository
 public class ClientesRepository {
 
-    private static final String INSERT = "INSERT INTO cliente (id, nome) values (?,?)";
-    private static final String SELECT_ALL = "SELECT * FROM cliente";
-    private static final String SELECT_POR_ID = "SELECT * FROM cliente WHERE id = ?";
-    private static final String UPDATE = "UPDATE cliente SET nome = ? WHERE id = ?";
-    private static final String DELETE = "DELETE FROM cliente WHERE id = ?";
+    private static final String INSERT = "INSERT INTO cliente_teste (id, nome) values (?,?)";
+    private static final String SELECT_ALL = "SELECT * FROM cliente_teste";
+    private static final String SELECT_POR_ID = "SELECT * FROM cliente_teste WHERE id = ?";
+    private static final String UPDATE = "UPDATE cliente_teste SET nome = ? WHERE id = ?";
+    private static final String DELETE = "DELETE FROM cliente_teste WHERE id = ?";
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    public Cliente salvaCliente(Cliente cliente){
-        jdbcTemplate.update(INSERT, new Object[]{cliente.getId(),cliente.getNome()});
-        return cliente;
+    public ClienteTeste salvaCliente(ClienteTeste clienteTeste){
+        jdbcTemplate.update(INSERT, new Object[]{clienteTeste.getId(), clienteTeste.getNome()});
+        return clienteTeste;
     }
 
-    public Cliente atualizar(Cliente cliente){
-        jdbcTemplate.update(UPDATE, new Object[]{cliente.getNome(), cliente.getId()});
-        return cliente;
+    public ClienteTeste atualizar(ClienteTeste clienteTeste){
+        jdbcTemplate.update(UPDATE, new Object[]{clienteTeste.getNome(), clienteTeste.getId()});
+        return clienteTeste;
     }
 
-    public List<Cliente> obterTodos(){
+    public List<ClienteTeste> obterTodos(){
         return jdbcTemplate.query(SELECT_ALL, getClienteMapper());
     }
 
-    public List<Cliente> buscaPorNome(String nome){
+    public List<ClienteTeste> buscaPorNome(String nome){
         return jdbcTemplate.query(SELECT_ALL.concat(" where nome like ?"),
                 new Object[]{ "%"+ nome + "%"},
                 getClienteMapper());
     }
 
-    private static RowMapper<Cliente> getClienteMapper() {
-        return new RowMapper<Cliente>() {
+    private static RowMapper<ClienteTeste> getClienteMapper() {
+        return new RowMapper<ClienteTeste>() {
             @Override
-            public Cliente mapRow(ResultSet resultSet, int i) throws SQLException {
-                return new Cliente(resultSet.getInt("id"), resultSet.getString("nome"));
+            public ClienteTeste mapRow(ResultSet resultSet, int i) throws SQLException {
+                return new ClienteTeste(resultSet.getInt("id"), resultSet.getString("nome"));
             };
         };
     }
 
-    public void deletar(Cliente cliente){
-        deletar(cliente.getId());
+    public void deletar(ClienteTeste clienteTeste){
+        deletar(clienteTeste.getId());
     }
 
     public void deletar(Integer id){

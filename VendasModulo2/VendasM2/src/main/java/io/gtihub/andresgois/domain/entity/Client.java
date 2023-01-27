@@ -1,17 +1,24 @@
 package io.gtihub.andresgois.domain.entity;
 
-public class Cliente {
+import javax.persistence.*;
 
+@Entity
+//@Table(name = "cliente")
+public class Client {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(name = "nome")
     private String nome;
 
-    public Cliente(){}
+    public Client(){}
 
-    public Cliente(String nome) {
+    public Client(String nome) {
         this.nome = nome;
     }
 
-    public Cliente(Integer id, String nome) {
+    public Client(Integer id, String nome) {
         this.id = id;
         this.nome = nome;
     }
@@ -34,7 +41,7 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente{" +
+        return "ClienteTeste{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
                 '}';

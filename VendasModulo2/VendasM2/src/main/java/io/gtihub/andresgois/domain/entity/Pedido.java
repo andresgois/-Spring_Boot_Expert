@@ -6,13 +6,13 @@ import java.time.LocalDate;
 public class Pedido {
 
     private Integer id;
-    private Cliente cliente;
+    private ClienteTeste clienteTeste;
     private LocalDate dataPedido;
     private BigDecimal total;
 
-    public Pedido(Integer id, Cliente cliente, LocalDate dataPedido, BigDecimal total) {
+    public Pedido(Integer id, ClienteTeste clienteTeste, LocalDate dataPedido, BigDecimal total) {
         this.id = id;
-        this.cliente = cliente;
+        this.clienteTeste = clienteTeste;
         this.dataPedido = dataPedido;
         this.total = total;
     }
@@ -25,12 +25,12 @@ public class Pedido {
         this.id = id;
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public ClienteTeste getCliente() {
+        return clienteTeste;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setCliente(ClienteTeste clienteTeste) {
+        this.clienteTeste = clienteTeste;
     }
 
     public LocalDate getDataPedido() {

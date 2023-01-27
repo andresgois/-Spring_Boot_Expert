@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="defec31f-8433-4404-aa66-a686f7d54dc5" name="Changes" comment=":sparkles: feat: propriedades do banco h2">
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/gtihub/andresgois/domain/repository/ClienteRepository.java" afterDir="false" />
+    <list default="true" id="defec31f-8433-4404-aa66-a686f7d54dc5" name="Changes" comment=":sparkles: feat: cliente com entity managed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/gtihub/andresgois/VendasApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/gtihub/andresgois/VendasApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/gtihub/andresgois/domain/entity/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/gtihub/andresgois/domain/entity/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/gtihub/andresgois/domain/repository/ClientRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/meu_schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/gtihub/andresgois/domain/repository/ClienteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/gtihub/andresgois/domain/repository/ClienteRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,12 +96,20 @@
       <option name="project" value="LOCAL" />
       <updated>1674695878529</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary=":sparkles: feat: cliente com entity managed">
+      <created>1674855653526</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1674855653526</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value=":sparkles: feat: propriedades do sistema" />
     <MESSAGE value=":sparkles: feat: propriedades do banco h2" />
-    <option name="LAST_COMMIT_MESSAGE" value=":sparkles: feat: propriedades do banco h2" />
+    <MESSAGE value=":sparkles: feat: cliente com entity managed" />
+    <option name="LAST_COMMIT_MESSAGE" value=":sparkles: feat: cliente com entity managed" />
   </component>
 </project>

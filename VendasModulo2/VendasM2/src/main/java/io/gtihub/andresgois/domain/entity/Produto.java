@@ -1,12 +1,18 @@
 package io.gtihub.andresgois.domain.entity;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 
-public class Produto {private Integer id;
+@Entity
+@Table(name = "produto")
+public class Produto {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private String descricao;
+    @Column(name = "preco_unitario")
     private BigDecimal preco;
-
-
 
     public Produto() {
     }

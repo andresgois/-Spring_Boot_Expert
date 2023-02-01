@@ -1,18 +1,30 @@
 package io.gtihub.andresgois.domain.entity;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "pedido")
 public class Pedido {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private ClienteTeste clienteTeste;
+
+    @ManyToOne  // muitos pedidos para um cliente
+    @JoinColumn(name = "cliente_id")
+    private Cliente cliente;
+
+    @Column(name = "data_pedido")
     private LocalDate dataPedido;
+
+    @Column(name = "total", length = 20, precision = 2)
     private BigDecimal total;
 
-    public Pedido(Integer id, ClienteTeste clienteTeste, LocalDate dataPedido, BigDecimal total) {
+    public Pedido(Integer id, Cliente cliente, LocalDate dataPedido, BigDecimal total) {
         this.id = id;
-        this.clienteTeste = clienteTeste;
+        this.cliente = cliente;
         this.dataPedido = dataPedido;
         this.total = total;
     }
@@ -25,12 +37,12 @@ public class Pedido {
         this.id = id;
     }
 
-    public ClienteTeste getCliente() {
-        return clienteTeste;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public void setCliente(ClienteTeste clienteTeste) {
-        this.clienteTeste = clienteTeste;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     public LocalDate getDataPedido() {

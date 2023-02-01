@@ -75,6 +75,9 @@ public class VendasApplication {
             System.out.println("=============Listar todos ==============");
             List<Cliente> cli = repository.findAll();
             cli.forEach(System.out::println);
+            System.out.println("=============Existe ==============");
+            boolean existe = repository.existsByNome("Priscila");
+            System.out.println("Existe alguém com nome de Priscila no banco? "+existe);
         };
     }
     public static void main(String[] args) {

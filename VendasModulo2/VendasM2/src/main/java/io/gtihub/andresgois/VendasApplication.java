@@ -4,6 +4,7 @@ import io.gtihub.andresgois.domain.entity.Cliente;
 import io.gtihub.andresgois.domain.entity.ClienteTeste;
 import io.gtihub.andresgois.domain.repository.ClienteRepository;
 import io.gtihub.andresgois.domain.repository.ClientesRepository;
+import io.gtihub.andresgois.domain.repository.ICientesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -54,12 +55,26 @@ public class VendasApplication {
         };
     }
 
-    @Bean
+    //@Bean
     public CommandLineRunner iniciarComEntityManaged(@Autowired ClienteRepository repository){
         return args -> {// ele gera um id autormático
             Cliente cliente = new Cliente("Andre Gois");
             repository.salvar(cliente);
             System.out.println(cliente);
+        };
+    }
+
+    @Bean
+    public CommandLineRunner initJpaRepository(@Autowired ICientesRepository repository){
+        return args -> {// ele gera um id autormático
+            Cliente cliente = new Cliente("Andre Gois");
+            repository.save(cliente);
+            System.out.println(cliente);
+            repository.save(new Cliente("Priscila"));
+
+            System.out.println("=============Listar todos ==============");
+            List<Cliente> cli = repository.findAll();
+            cli.forEach(System.out::println);
         };
     }
     public static void main(String[] args) {

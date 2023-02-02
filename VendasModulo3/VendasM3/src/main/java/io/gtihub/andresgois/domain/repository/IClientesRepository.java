@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface ICientesRepository extends JpaRepository<Cliente, Integer> {
+public interface IClientesRepository extends JpaRepository<Cliente, Integer> {
 
     // Query method
     List<Cliente> findByNomeLike(String nome);

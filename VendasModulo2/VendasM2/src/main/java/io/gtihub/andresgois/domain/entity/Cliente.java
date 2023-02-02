@@ -13,7 +13,7 @@ public class Cliente {
     @Column(name = "nome")
     private String nome;
 
-    @OneToMany(mappedBy = "cliente")
+    @OneToMany(mappedBy = "cliente", fetch = FetchType.LAZY) //, fetch = FetchType.EAGER) não recomendado, deixa consultas pesadas
     private Set<Pedido> pedidos;
     public Cliente(){}
 

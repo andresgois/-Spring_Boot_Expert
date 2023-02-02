@@ -2,15 +2,19 @@ package io.gtihub.andresgois;
 
 import io.gtihub.andresgois.domain.entity.Cliente;
 import io.gtihub.andresgois.domain.entity.ClienteTeste;
+import io.gtihub.andresgois.domain.entity.Pedido;
 import io.gtihub.andresgois.domain.repository.ClienteRepository;
 import io.gtihub.andresgois.domain.repository.ClientesRepository;
 import io.gtihub.andresgois.domain.repository.ICientesRepository;
+import io.gtihub.andresgois.domain.repository.PedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 
 @SpringBootApplication
@@ -65,7 +69,10 @@ public class VendasApplication {
     }
 
     @Bean
-    public CommandLineRunner initJpaRepository(@Autowired ICientesRepository repository){
+    public CommandLineRunner initJpaRepository(
+            @Autowired ICientesRepository repository,
+            @Autowired PedidoRepository pedidoRepository)
+    {
         return args -> {// ele gera um id autormático
             Cliente cliente = new Cliente("Andre Gois");
             repository.save(cliente);
@@ -78,6 +85,24 @@ public class VendasApplication {
             System.out.println("=============Existe ==============");
             boolean existe = repository.existsByNome("Priscila");
             System.out.println("Existe alguém com nome de Priscila no banco? "+existe);
+
+            System.out.println("============= JOIN ==============");
+            Cliente fulano = new Cliente("Fulano");
+            repository.save(fulano);
+
+            Pedido p = new Pedido();
+            p.setCliente(fulano);
+            p.setDataPedido(LocalDate.now());
+            p.setTotal( BigDecimal.valueOf(100));
+
+            pedidoRepository.save(p);
+
+            Cliente clienteComPedido = repository.findClienteFetchPedidos(fulano.getId());
+            System.out.println(clienteComPedido);
+            System.out.println(clienteComPedido.getPedidos());
+            System.out.println("============= PEDIDOS DO FULANO ==============");
+            pedidoRepository.findByCliente(fulano).forEach(System.out::println);
+
         };
     }
     public static void main(String[] args) {

@@ -29,4 +29,7 @@ public interface ICientesRepository extends JpaRepository<Cliente, Integer> {
     @Modifying
     void deleteByNome(String nome);
 
+    @Query(" select c from Cliente c left join fetch c.pedidos where c.id = :id ")// trás os clientes tendo ou não pedidos
+    Cliente findClienteFetchPedidos(@Param("id") Integer id);
+
 }

@@ -43,7 +43,7 @@ public class ProductController {
                 .findById(id)
                 .map( pro -> {
                     produtoRepository.delete(pro);
-                    return pro;
+                    return Void.TYPE;
                 })
                 .orElseThrow( () ->
                         new ResponseStatusException(HttpStatus.NOT_FOUND,

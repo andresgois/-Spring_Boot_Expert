@@ -6,12 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class VendasApplication {
 
-    @Bean
+    //@Bean
     public CommandLineRunner init(@Autowired IClientesRepository c){
         return args -> {
             Cliente cliente = new Cliente(null, "André Gois");

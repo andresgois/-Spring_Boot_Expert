@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13836cff-8129-4251-a636-5f786732d3b6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/VendasApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/VendasApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/domain/repository/ICientesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/domain/repository/IClientesRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/domain/entity/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/domain/entity/Cliente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/rest/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/rest/controller/ClienteController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

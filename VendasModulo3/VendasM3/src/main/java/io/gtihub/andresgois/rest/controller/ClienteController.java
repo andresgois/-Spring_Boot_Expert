@@ -35,4 +35,29 @@ public class ClienteController {
         return ResponseEntity.ok(cliente);
     }
 
+    @DeleteMapping("/{id}")
+    @ResponseBody
+    public ResponseEntity<?> delete(@PathVariable Integer id){
+        Optional<Cliente> cliente = cliRepository.findById(id);
+        if(cliente.isPresent()){
+            cliRepository.delete(cliente.get());
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+    @PutMapping("/{id}")
+    @ResponseBody
+    public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody Cliente cli){
+        return cliRepository
+                .findById(id)
+                .map( clienteAtualizado -> {
+                    cli.setId(clienteAtualizado.getId());
+                    cliRepository.save(cli);
+                    return ResponseEntity.noContent().build();
+                })
+                .orElseGet(
+                        () -> ResponseEntity.notFound().build()
+                );
+    }
 }

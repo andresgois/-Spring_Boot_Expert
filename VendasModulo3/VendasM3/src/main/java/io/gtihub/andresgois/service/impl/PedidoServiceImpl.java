@@ -38,7 +38,7 @@ public class PedidoServiceImpl implements PedidoService {
         Cliente cliente = clientesRepository
                 .findById(idCliente)
                 .orElseThrow(
-                        () -> new RegraNegocioException("Código de cliente inválido")
+                        () -> new RegraNegocioException("Código de cliente inválido: "+idCliente)
                 );
 
         Pedido pedido = new Pedido();

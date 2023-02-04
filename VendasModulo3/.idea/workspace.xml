@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="13836cff-8129-4251-a636-5f786732d3b6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/domain/entity/ItemPedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/domain/entity/ItemPedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/rest/controller/PedidosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/rest/controller/PedidosController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/service/PedidoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/service/PedidoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/rest/dto/PedidoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/rest/dto/PedidoDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/service/impl/PedidoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/service/impl/PedidoServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,5 +81,21 @@
       <updated>1675297919492</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/rest/controller/PedidosController.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/service/impl/PedidoServiceImpl.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

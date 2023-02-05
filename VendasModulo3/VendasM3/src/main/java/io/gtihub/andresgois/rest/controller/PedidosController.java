@@ -2,6 +2,8 @@ package io.gtihub.andresgois.rest.controller;
 
 import io.gtihub.andresgois.domain.entity.ItemPedido;
 import io.gtihub.andresgois.domain.entity.Pedido;
+import io.gtihub.andresgois.domain.enums.StatusPedido;
+import io.gtihub.andresgois.rest.dto.AtualizacaoStatusPedidoDTO;
 import io.gtihub.andresgois.rest.dto.InformacoesItemPedidoDTO;
 import io.gtihub.andresgois.rest.dto.InformacoesPedidoDTO;
 import io.gtihub.andresgois.rest.dto.PedidoDTO;
@@ -40,6 +42,13 @@ public class PedidosController {
                 .orElseThrow(
                         () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Pedido não encontrado!")
                 );
+    }
+
+    @PatchMapping("{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void updateStatus(@PathVariable Integer id, @RequestBody AtualizacaoStatusPedidoDTO dto){
+        String novoStatus = dto.getNovoStatus();
+        service.atualizaStatus(id, StatusPedido.valueOf(novoStatus));
     }
 
     private InformacoesPedidoDTO converter(Pedido p) {

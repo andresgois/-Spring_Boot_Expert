@@ -9,6 +9,7 @@ import io.gtihub.andresgois.domain.repository.IClientesRepository;
 import io.gtihub.andresgois.domain.repository.IProdutoRepository;
 import io.gtihub.andresgois.domain.repository.ItemPedidoRepository;
 import io.gtihub.andresgois.domain.repository.PedidoRepository;
+import io.gtihub.andresgois.exception.PedidoNaoEncontradoException;
 import io.gtihub.andresgois.exception.RegraNegocioException;
 import io.gtihub.andresgois.rest.dto.ItemPedidoDTO;
 import io.gtihub.andresgois.rest.dto.PedidoDTO;
@@ -61,6 +62,17 @@ public class PedidoServiceImpl implements PedidoService {
     @Override
     public Optional<Pedido> obterPedidoCompleto(Integer id) {
         return pedidoRepository.findByFetchItens(id);
+    }
+
+    @Override
+    @Transactional
+    public void atualizaStatus(Integer id, StatusPedido statusPedido) {
+        pedidoRepository
+                .findById(id)
+                .map( pedido -> {
+                    pedido.setStatus(statusPedido);
+                    return pedidoRepository.save(pedido);
+                }).orElseThrow( () -> new PedidoNaoEncontradoException() );
     }
 
     private List<ItemPedido> converterItems(Pedido pedido, List<ItemPedidoDTO> items){

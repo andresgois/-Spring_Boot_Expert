@@ -6,10 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="13836cff-8129-4251-a636-5f786732d3b6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/domain/repository/PedidoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/domain/repository/PedidoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/domain/entity/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/domain/entity/Pedido.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/rest/controller/PedidosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/rest/controller/PedidosController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/service/PedidoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/service/PedidoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/rest/dto/InformacoesPedidoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/rest/dto/InformacoesPedidoDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/service/impl/PedidoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/service/impl/PedidoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendasM3/src/main/resources/meu_schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/VendasM3/src/main/resources/meu_schema.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +24,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -53,6 +55,11 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="io.gtihub.andresgois.domain.enums" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="VendasApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="io.gtihub.andresgois.VendasApplication" />
@@ -91,11 +98,6 @@
           <url>file://$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/rest/controller/PedidosController.java</url>
           <line>31</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/service/impl/PedidoServiceImpl.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

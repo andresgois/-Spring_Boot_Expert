@@ -4,6 +4,7 @@ import io.gtihub.andresgois.domain.entity.Cliente;
 import io.gtihub.andresgois.domain.entity.ItemPedido;
 import io.gtihub.andresgois.domain.entity.Pedido;
 import io.gtihub.andresgois.domain.entity.Produto;
+import io.gtihub.andresgois.domain.enums.StatusPedido;
 import io.gtihub.andresgois.domain.repository.IClientesRepository;
 import io.gtihub.andresgois.domain.repository.IProdutoRepository;
 import io.gtihub.andresgois.domain.repository.ItemPedidoRepository;
@@ -46,6 +47,7 @@ public class PedidoServiceImpl implements PedidoService {
         pedido.setTotal(dto.getTotal());
         pedido.setDataPedido(LocalDate.now());
         pedido.setCliente(cliente);
+        pedido.setStatus(StatusPedido.REALIZADO);
 
         List<ItemPedido> itemPedido = converterItems(pedido, dto.getItems());
         pedidoRepository.save(pedido);

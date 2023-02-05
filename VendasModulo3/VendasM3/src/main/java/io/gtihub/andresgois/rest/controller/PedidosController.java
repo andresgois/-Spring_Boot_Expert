@@ -51,6 +51,7 @@ public class PedidosController {
                 .cpf(p.getCliente().getCpf())
                 .nomeCliente(p.getCliente().getNome())
                 .total(p.getTotal())
+                .status(p.getStatus().name())
                 .items(converterItens(p.getItens()))
                 .build();
     }

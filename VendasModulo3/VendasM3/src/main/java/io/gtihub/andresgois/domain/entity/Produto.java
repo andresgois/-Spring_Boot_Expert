@@ -1,6 +1,8 @@
 package io.gtihub.andresgois.domain.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
 @Entity
@@ -10,8 +12,11 @@ public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @NotEmpty(message = "Campo descrição é obrigatório.")
     private String descricao;
     @Column(name = "preco_unitario")
+    @NotNull(message = "Campo preço é obrigatório")
     private BigDecimal preco;
 
     public Produto() {

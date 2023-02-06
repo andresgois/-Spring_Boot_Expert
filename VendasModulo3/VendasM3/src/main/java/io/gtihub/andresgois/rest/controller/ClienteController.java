@@ -52,7 +52,7 @@ public class ClienteController {
 
     @PutMapping("/{id}")
     @ResponseBody
-    public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody Cliente cli){
+    public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody @Valid Cliente cli){
         return cliRepository
                 .findById(id)
                 .map( clienteAtualizado -> {

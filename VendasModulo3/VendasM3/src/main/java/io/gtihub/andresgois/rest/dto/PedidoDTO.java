@@ -1,5 +1,6 @@
 package io.gtihub.andresgois.rest.dto;
 
+import io.gtihub.andresgois.validation.NotEmptyList;
 import lombok.*;
 
 import javax.validation.constraints.NotNull;
@@ -15,6 +16,8 @@ public class PedidoDTO {
     private Integer cliente;
     @NotNull(message = "Campo total do pedido é obrigatório")
     private BigDecimal total;
+
+    @NotEmptyList(message = "Pedido não pode ser realizado sem itens.")
     private List<ItemPedidoDTO> items;
 
 }

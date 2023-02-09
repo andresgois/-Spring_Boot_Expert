@@ -41,12 +41,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin();*/
 
-        // Versão 3
-        http.csrf().disable()
+        // Versão 3 - via página de login
+        /*http.csrf().disable()
                 .authorizeRequests()
                     .antMatchers("/api/clientes/**").hasAnyRole("ADMIN","USER")
                     .antMatchers("/api/pedidos/**").hasAnyRole("ADMIN","USER")
                     .antMatchers("/api/produtos/**").hasRole("ADMIN")
-                .and().formLogin();
+                .and().formLogin();*/
+
+        // Versão 4 - Basic
+        http.csrf().disable()
+                .authorizeRequests()
+                .antMatchers("/api/clientes/**").hasAnyRole("ADMIN","USER")
+                .antMatchers("/api/pedidos/**").hasAnyRole("ADMIN","USER")
+                .antMatchers("/api/produtos/**").hasRole("ADMIN")
+                .and().httpBasic();
     }
 }

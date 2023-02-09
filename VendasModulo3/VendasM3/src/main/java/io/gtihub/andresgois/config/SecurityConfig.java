@@ -15,10 +15,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
-    
+
     @Override // Método para autenticação
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        super.configure(auth);
+        //super.configure(auth);
+
+        // configuração em memória
+        auth
+                .inMemoryAuthentication()
+                .passwordEncoder(passwordEncoder())
+                .withUser("fulano")
+                .password(passwordEncoder().encode("123"))
+                .roles("USER");
     }
 
     @Override  // Método para autorização

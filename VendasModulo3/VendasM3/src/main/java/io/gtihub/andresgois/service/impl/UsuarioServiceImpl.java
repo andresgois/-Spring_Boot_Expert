@@ -47,7 +47,6 @@ public class UsuarioServiceImpl implements UserDetailsService {
                 .roles("USER","ADMIN")
                 .build();*/
 
-
         Usuario usuario = usuarioRepository.findByLogin(username).orElseThrow(
                 () -> new UsernameNotFoundException("Usuário não encontrado!"));
         String[] roles = usuario.isAdmin() ?

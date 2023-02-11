@@ -1,14 +1,11 @@
 package io.gtihub.andresgois.security.jwt;
 
-import io.gtihub.andresgois.VendasApplication;
 import io.gtihub.andresgois.domain.entity.Usuario;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.SpringApplication;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
@@ -46,7 +43,7 @@ public class JwtService {
                 .compact();
     }
 
-    public static void main(String[] args){
+    /*public static void main(String[] args){
         ConfigurableApplicationContext context = SpringApplication.run(VendasApplication.class);
         JwtService service = context.getBean(JwtService.class);
         Usuario usuario = Usuario.builder().login("fulano").build();
@@ -59,7 +56,7 @@ public class JwtService {
 
         System.out.println("------------ Usuario logado -------------");
         System.out.println(service.obterLoginUsuario(token));
-    }
+    }*/
 
     private Claims obterClaims(String token ) throws ExpiredJwtException {
 

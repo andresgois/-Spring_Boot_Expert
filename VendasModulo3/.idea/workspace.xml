@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="13836cff-8129-4251-a636-5f786732d3b6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/rest/controller/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/rest/controller/UsuarioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/security/jwt/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/security/jwt/JwtService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/service/impl/UsuarioServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/service/impl/UsuarioServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,23 +65,16 @@
       <recent name="io.gtihub.andresgois.domain.enums" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.JwtService">
-    <configuration name="JwtService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="io.gtihub.andresgois.JwtService" />
-      <module name="VendasM3" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.gtihub.andresgois.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean install" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.VendasApplication">
     <configuration name="VendasApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="io.gtihub.andresgois.VendasApplication" />
       <module name="VendasM3" />
+      <option name="PROGRAM_PARAMETERS" value="clean install" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="io.gtihub.andresgois.*" />
@@ -90,10 +85,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="io.gtihub.andresgois.security.jwt.JwtService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.gtihub.andresgois.security.jwt.JwtService" />
+      <module name="VendasM3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.gtihub.andresgois.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.io.gtihub.andresgois.security.jwt.JwtService" />
+      <item itemvalue="Application.VendasApplication" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.JwtService" />
         <item itemvalue="Application.VendasApplication" />
+        <item itemvalue="Application.io.gtihub.andresgois.security.jwt.JwtService" />
       </list>
     </recent_temporary>
   </component>
@@ -117,14 +129,14 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/config/SecurityConfig.java</url>
-          <line>58</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/rest/controller/UsuarioController.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/config/SecurityConfig.java</url>
-          <line>75</line>
-          <option name="timeStamp" value="5" />
+          <url>file://$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/service/impl/UsuarioServiceImpl.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -2,6 +2,7 @@ package io.gtihub.andresgois.service.impl;
 
 import io.gtihub.andresgois.domain.entity.Usuario;
 import io.gtihub.andresgois.domain.repository.IUsuarioRepository;
+import io.gtihub.andresgois.exception.SenhaInvalidaException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -25,6 +26,15 @@ public class UsuarioServiceImpl implements UserDetailsService {
         return usuarioRepository.save(usuario);
     }
 
+    public UserDetails autenticar(Usuario usuario){
+        UserDetails user = loadUserByUsername(usuario.getLogin());
+        boolean senhasBatem = encoder.matches(usuario.getSenha(), user.getPassword());
+        if(senhasBatem){
+            return  user;
+        }
+
+        throw new SenhaInvalidaException();
+    }
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         /*if(!username.equals("cicrano")){

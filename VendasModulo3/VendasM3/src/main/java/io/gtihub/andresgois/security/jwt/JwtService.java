@@ -1,5 +1,6 @@
-package io.gtihub.andresgois;
+package io.gtihub.andresgois.security.jwt;
 
+import io.gtihub.andresgois.VendasApplication;
 import io.gtihub.andresgois.domain.entity.Usuario;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;

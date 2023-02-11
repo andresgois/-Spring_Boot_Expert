@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13836cff-8129-4251-a636-5f786732d3b6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_0_9_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendasM3/VendasM3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/VendasM3/VendasM3.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendasM3/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/VendasM3/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendasM3/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/VendasM3/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendasM3/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/VendasM3/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/VendasM3/src/main/java/io/gtihub/andresgois/JwtService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

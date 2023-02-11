@@ -1,5 +1,7 @@
 package io.gtihub.andresgois.config;
 
+import io.gtihub.andresgois.security.jwt.JwtAuthFilter;
+import io.gtihub.andresgois.security.jwt.JwtService;
 import io.gtihub.andresgois.service.impl.UsuarioServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -8,14 +10,26 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.filter.OncePerRequestFilter;
 
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private UsuarioServiceImpl usuarioService;
+
+    @Autowired
+    private JwtService jwtService;
+
+    @Bean
+    public OncePerRequestFilter jwtFilter(){
+        return new JwtAuthFilter(jwtService, usuarioService);
+    }
+
 
     @Bean
     public PasswordEncoder passwordEncoder(){
@@ -66,6 +80,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/produtos/**").hasRole("ADMIN")
                 .antMatchers(HttpMethod.POST,"/api/usuarios/**").permitAll()
                 .anyRequest().authenticated()
-                .and().httpBasic();
+                .and()
+                .sessionManagement()// cada sessão terá todos os elementos necessários para ela acontecer
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS) // toda autenticação deve ter o token
+                //.httpBasic();
+                .and()
+                .addFilterBefore( jwtFilter(), UsernamePasswordAuthenticationFilter.class); // chama nosso filtro
     }
 }

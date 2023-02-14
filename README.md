@@ -176,6 +176,9 @@ root@container_id:/# mysql -uroot -p
 Enter password: RootPassword
 ```
 
+## Swagger
+- [Local](http://localhost:8080/swagger-ui/)
+
 
 ## Pré-requisitos
 

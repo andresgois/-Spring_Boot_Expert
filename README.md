@@ -160,7 +160,21 @@ server.servlet.context-path=/sistema-vendas
 
 ## Layout ou Deploy da Aplicação
 
- 
+## Docker
+- Criando imagem personalizada
+```
+sudo docker build -t vendas-img .
+```
+- Criando container
+```
+docker container run -e MYSQL_USER=sa -e MYSQL_PASSWORD=password -e MYSQL_DATABASE=vendas -e MYSQL_ROOT_PASSWORD=password --name mysql-vendas -p 3306:3306 vendas-img
+```
+- Acessando o banco
+```
+$ docker exec -it container_id bash
+root@container_id:/# mysql -uroot -p
+Enter password: RootPassword
+```
 
 
 ## Pré-requisitos

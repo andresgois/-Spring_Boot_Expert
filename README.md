@@ -230,6 +230,65 @@ CMD ["/docker-entrypoint.sh"]
 - em Goals coloque *clean package*
     - isso limpa tudo e depois empacota a aplicação    
 
+## BUILD DO PROJETO
+### Gerando um JAR
+> Gerar um .jar
+- mvn clean package
+    - o .jar ficará na pasta target
+> Rodar o .jar
+- entra na pasta onde está o jar, nesse caso esta na target
+- java -jar .\vendas-1.0-SNAPSHOT.jar
+
+### Gerando um WAR
+> Adiciona essa linha no inicio do pom.xml abaixo de version
+```
+<packaging>war</packaging>
+```
+> Tem que colocar a dependência do tomcat e especificar como provider porque será um servidor externo que irá executa
+```
+<dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-tomcat</artifactId>
+      <scope>provided</scope>
+    </dependency>
+```
+> Tem que adicionar uma extersão na classe principal
+```
+public class VendasApplication extends SpringBootServletInitializer 
+```
+> Mesmo comando para gerar o jar, só que agora ele gerar um .WAR
+- mvn clean package
+### PROFILES PAR BUILDS DIFERENTES
+> Adiciona o profiles no pom.xml
+```
+<profiles>
+    <profile>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <id>desenvolvimneto</id>
+      <properties>
+        <project.packaging>jar</project.packaging>
+        <tomcat.scope>compile</tomcat.scope>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>producao</id>
+      <properties>
+        <project.packaging>war</project.packaging>
+        <tomcat.scope>provided</tomcat.scope>
+      </properties>
+    </profile>
+  </profiles>
+```
+
+> Adiciona a variáveis dinamicas via expressões
+```
+<packaging>${project.packaging}</packaging>
+```
+
+
 #### Roda o JAR
 - entre na pasta target
 ```

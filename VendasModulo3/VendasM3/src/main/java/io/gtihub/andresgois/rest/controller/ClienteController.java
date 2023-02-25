@@ -2,6 +2,7 @@ package io.gtihub.andresgois.rest.controller;
 
 import io.gtihub.andresgois.domain.entity.Cliente;
 import io.gtihub.andresgois.domain.repository.IClientesRepository;
+import io.swagger.annotations.*;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +15,7 @@ import java.util.Optional;
 
 @Controller
 @RequestMapping("/api/clientes")
+@Api("API Clientes")
 public class ClienteController {
 
     private IClientesRepository cliRepository;
@@ -24,7 +26,15 @@ public class ClienteController {
 
     @GetMapping("/{id}")
     @ResponseBody
-    public ResponseEntity<?> helloCliente(@PathVariable("id") Integer id){
+    @ApiOperation("Obtem um cliente por id")
+    @ApiResponses({
+            @ApiResponse(code = 200, message = "Cliente encontrado!"),
+            @ApiResponse(code = 404, message = "Cliente não encontrado para esse ID!")
+    })
+    public ResponseEntity<?> helloCliente(
+            @PathVariable("id")
+            @ApiParam("Id do cliente")
+            Integer id){
         Optional<Cliente> cliente = cliRepository.findById(id);
         if(cliente.isPresent()){
             return ResponseEntity.ok(cliente.get());
@@ -34,6 +44,11 @@ public class ClienteController {
 
     @PostMapping
     @ResponseBody
+    @ApiOperation("Salva um novo cliente")
+    @ApiResponses({
+            @ApiResponse(code = 201, message = "Cliente salvo com sucesso!"),
+            @ApiResponse(code = 404, message = "Erro de validação de campos!")
+    })
     public ResponseEntity<Cliente> save(@RequestBody @Valid Cliente c){
         Cliente cliente = cliRepository.save(c);
         return ResponseEntity.ok(cliente);

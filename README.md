@@ -288,6 +288,15 @@ public class VendasApplication extends SpringBootServletInitializer
 <packaging>${project.packaging}</packaging>
 ```
 
+> Criar os pacotes de acordo com os profiles
+- mvn clean package -P desenvolvimneto
+
+## Plugin assistent
+- Tela de inicio IntelliJ
+- Plugins
+- spring assistant
+- 
+
 
 #### Roda o JAR
 - entre na pasta target

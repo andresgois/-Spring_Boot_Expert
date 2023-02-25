@@ -1,6 +1,7 @@
 package io.gtihub.andresgois.domain.repository;
 
 import io.gtihub.andresgois.domain.entity.Cliente;
+import org.springframework.data.domain.Example;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -16,6 +17,9 @@ public interface IClientesRepository extends JpaRepository<Cliente, Integer> {
     Cliente findOneByNome(String nome);
     boolean existsByNome(String nome);
 
+    List<Cliente> findAll();
+
+    List<Cliente> findAll(Example example);
     // query
     @Query(value = " select c from Cliente c where c.nome like :nome ")
     List<Cliente> buscaPorNome(@Param("nome") String nome);

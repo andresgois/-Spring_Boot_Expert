@@ -66,15 +66,22 @@ public class ClienteController {
     }
 
     @GetMapping
-    public ResponseEntity<?> find(Cliente filtro){
+    public ResponseEntity find(Cliente filtro){
+
         ExampleMatcher matcher = ExampleMatcher
                 .matching()
                 .withIgnoreCase()
                 .withStringMatcher(
-                        ExampleMatcher.StringMatcher.CONTAINING
+                        ExampleMatcher.StringMatcher.CONTAINING // independente da posição da string
                 );
         Example example = Example.of(filtro, matcher);
         List<Cliente> lista = cliRepository.findAll(example);
+        return ResponseEntity.ok(lista);
+    }
+
+    @GetMapping("/cliente")
+    public ResponseEntity listAll(){
+        List<Cliente> lista = cliRepository.findAll();
         return ResponseEntity.ok(lista);
     }
 

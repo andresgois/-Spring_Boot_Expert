@@ -1,9 +1,7 @@
 package io.gtihub.andresgois.domain.entity;
 
-import javax.persistence.Table;
-
-@Table(name = "cliente_teste")
-public class ClienteTeste {
+//@Table(name = "cliente_teste")
+class ClienteTeste {
 
     private Integer id;
     private String nome;

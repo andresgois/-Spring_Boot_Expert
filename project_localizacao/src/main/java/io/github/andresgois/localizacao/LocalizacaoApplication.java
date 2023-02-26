@@ -25,6 +25,10 @@ public class LocalizacaoApplication implements CommandLineRunner {
 		System.out.println("---- Iniciou ----");
 		//salvar();
 		listar();
+		System.out.println("---- Lista cidade por nome ----");
+		listaPorNome();
+		System.out.println("---- Busca cidades que tenham 'cam' no nome ----");
+		buscaLike();
 	}
 
 	@Transactional
@@ -35,5 +39,13 @@ public class LocalizacaoApplication implements CommandLineRunner {
 
 	void listar(){
 		cidadeRepository.findAll().forEach(System.out::println);
+	}
+
+	void listaPorNome(){
+		cidadeRepository.findByNome("Cuiabá").forEach(System.out::println);
+	}
+
+	void buscaLike(){
+		cidadeRepository.findByNomeContaining("Camp").forEach(System.out::println);
 	}
 }

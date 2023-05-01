@@ -1,15 +1,16 @@
 package andresgois.github.io.criptografiasenhausuario.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Entity(name = "usuario")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity(name = "Usuario")
 public class Usuario {
 
     @Id
@@ -19,6 +20,7 @@ public class Usuario {
     private String login;
 
     @Column(name = "password")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
 }

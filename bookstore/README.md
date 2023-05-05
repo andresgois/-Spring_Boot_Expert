@@ -5,3 +5,6 @@
 
 ## Arquitetura
 ![Arquitetura](../assets/bookstore_arquitetura.png)
+
+## H2
+- [Local](http://localhost:8080/h2-console)

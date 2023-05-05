@@ -1,0 +1,29 @@
+version: '3'
+ 
+services:
+  db:
+    image: mysql:5.7
+    container_name: ctn-bookstore
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: bookstore
+      MYSQL_USER: andre
+      MYSQL_PASSWORD: 123456
+    ports:
+      - "3306:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: ctn-phpmyadmin
+    links:
+      - db
+    environment:
+      PMA_HOST: ctn-bookstore
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    restart: always
+    ports:
+      - 8081:80
+volumes:
+  dbdata:

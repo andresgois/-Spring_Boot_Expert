@@ -8,3 +8,8 @@
 
 ## H2
 - [Local](http://localhost:8080/h2-console)
+
+## PHPmyAdmin
+- [local](http://localhost:8081/)
+- root
+- 123456

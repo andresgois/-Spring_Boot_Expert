@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.andresgois.github.io.domain.Categoria;
-import br.andresgois.github.io.resource.service.CategoriaService;
+import br.andresgois.github.io.service.CategoriaService;
 
 @RestController
 @RequestMapping("/categorias")

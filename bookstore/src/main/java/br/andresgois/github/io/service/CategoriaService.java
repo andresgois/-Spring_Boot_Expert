@@ -1,5 +1,6 @@
 package br.andresgois.github.io.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,5 +20,9 @@ public class CategoriaService {
         //return opt.orElse(null);
         return opt.orElseThrow(
                 () -> new ObjectNotFoundException("Objeto não encontrado Id: "+id));
+    }
+
+    public List<Categoria> findAll() {
+        return categoriaRepository.findAll();
     }
 }

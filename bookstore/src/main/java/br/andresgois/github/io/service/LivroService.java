@@ -1,5 +1,6 @@
 package br.andresgois.github.io.service;
 
+import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,5 +19,7 @@ public class LivroService {
         return obj.orElseThrow( () -> new ObjectNotFoundException("Objeto não encontrado, Id: "+id));
     }
     
-    
+    public List<Livro> findAll() {
+        return livroRepository.findAll();
+    }
 }

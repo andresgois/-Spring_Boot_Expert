@@ -2,7 +2,6 @@ package br.andresgois.github.io.resource;
 
 import java.net.URI;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,33 +29,35 @@ public class LivroResource {
     private LivroService service;
     
     @GetMapping(value = "/{id}")
-    public ResponseEntity<Livro> findLivroById(@PathVariable Integer id){
+    public ResponseEntity<Livro> findLivroById(@PathVariable Integer id) {
         Livro liv = service.findLivroById(id);
         return ResponseEntity.ok().body(liv);
     }
     
     @GetMapping
-    public ResponseEntity<List<LivroDTO>> findAll(@RequestParam(value = "categoria", defaultValue = "0") Integer id_cat){
+    public ResponseEntity<List<LivroDTO>> findAll(
+            @RequestParam(value = "categoria", defaultValue = "0") Integer id_cat) {
         List<Livro> liv = service.findAll(id_cat);
-        List<LivroDTO> opt = liv.stream().map( item -> new LivroDTO(item)).collect(Collectors.toList());
+        List<LivroDTO> opt = liv.stream().map(item -> new LivroDTO(item)).collect(Collectors.toList());
         return ResponseEntity.ok().body(opt);
     }
     
     @PutMapping(value = "/{id}")
-    public ResponseEntity<Livro> update(@PathVariable Integer id, @RequestBody Livro livro){
+    public ResponseEntity<Livro> update(@PathVariable Integer id, @RequestBody Livro livro) {
         service.update(id, livro);
         return ResponseEntity.noContent().build();
     }
     
     @PatchMapping(value = "/{id}")
-    public ResponseEntity<Livro> updatePatch(@PathVariable Integer id, @RequestBody Livro livro){
+    public ResponseEntity<Livro> updatePatch(@PathVariable Integer id, @RequestBody Livro livro) {
         service.update(id, livro);
         return ResponseEntity.noContent().build();
     }
     
     @PostMapping
-    public ResponseEntity<Livro> create(@RequestBody Livro obj){
-        Livro newObj = service.create(obj);
+    public ResponseEntity<Livro> create(@RequestParam(value = "categoria", defaultValue = "0") Integer id_cat,
+            @RequestBody Livro obj) {
+        Livro newObj = service.createComCategoria(id_cat, obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newObj.getId()).toUri();
         return ResponseEntity.created(uri).build();
     }

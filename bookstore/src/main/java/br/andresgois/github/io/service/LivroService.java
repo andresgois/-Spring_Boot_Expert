@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import br.andresgois.github.io.domain.Categoria;
 import br.andresgois.github.io.domain.Livro;
 import br.andresgois.github.io.repository.CategoriaRepository;
 import br.andresgois.github.io.repository.LivroRepository;
@@ -44,5 +46,12 @@ public class LivroService {
         newObj.setTitulo(livro.getTitulo());
         newObj.setNome_aut(livro.getNome_aut());
         newObj.setTexto(livro.getTexto());
+    }
+    
+    public Livro createComCategoria(Integer id, Livro obj) {
+        obj.setId(null);
+        Categoria cat = categoriaService.findById(id);
+        obj.setCategoria(cat);
+        return livroRepository.save(obj);
     }
 }

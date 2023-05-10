@@ -4,8 +4,11 @@ import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +23,7 @@ import br.andresgois.github.io.domain.Categoria;
 import br.andresgois.github.io.dtos.CategoriaDTO;
 import br.andresgois.github.io.service.CategoriaService;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/categorias")
 public class CategoriaResource {
@@ -41,7 +45,7 @@ public class CategoriaResource {
     }
     
     @PostMapping
-    public ResponseEntity<Categoria> create(@RequestBody Categoria categoria){
+    public ResponseEntity<Categoria> create(@Valid @RequestBody Categoria categoria){
         Categoria obj = categoriaService.create(categoria);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
         return ResponseEntity.created(uri).build(); //.body(new CategoriaDTO(categoria));

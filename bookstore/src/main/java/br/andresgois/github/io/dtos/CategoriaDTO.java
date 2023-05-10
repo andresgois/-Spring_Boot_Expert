@@ -1,13 +1,23 @@
 package br.andresgois.github.io.dtos;
 
 import java.io.Serializable;
+
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.validator.constraints.Length;
+
 import br.andresgois.github.io.domain.Categoria;
 
 public class CategoriaDTO implements Serializable{
     
     private static final long serialVersionUID = 1L;
     private Integer id;
+    @NotEmpty(message = "Campo nome é requerido")
+    @Length(min = 3, max = 200, message = "O campo nome deve ter entre 3 e 200 caracteres")
     private String nome;
+    
+    @NotEmpty(message = "descrição nome é requerido")
+    @Length(min = 3, max = 200, message = "O campo descrição deve ter entre 3 e 200 caracteres")
     private String descricao;
     
     public CategoriaDTO() {}

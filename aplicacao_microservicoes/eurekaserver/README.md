@@ -12,15 +12,33 @@
 - http://localhost:8080/clientes
 ```
 {
-    "cpf": "string",
+    "cpf": "04588236698",
     "nome": "teste",
     "idade": 0
 }
 ```
 > Listar cliente
 - GET
-- http://localhost:8080/clientes
+- http://localhost:8080/clientes?cpf=04588236698
 
 ## Atalhos
 - Cria variavél: *ctrl + alt +v*
 - Em cima da classe que não existe: *alt + enter*
+
+## Serviço de Cartões
+> Salvar cartoes
+- POST
+- http://localhost:8080/cartoes
+```
+{
+    "nome": "Alelo",
+    "bandeira": "mastercard",
+    "renda": 5000.00
+}
+```
+> Listar cartoes
+- GET
+- http://localhost:8080/cartoes?renda=155669
+> Listar cartoes por cliente
+- GET
+- http://localhost:8080/cartoes?cpf=04588236698

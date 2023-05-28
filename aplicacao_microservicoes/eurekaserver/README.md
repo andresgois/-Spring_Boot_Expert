@@ -42,3 +42,30 @@
 > Listar cartoes por cliente
 - GET
 - http://localhost:8080/cartoes?cpf=04588236698
+
+## Avaliador de crédito
+> Consulta situação do cliente
+- GET
+- http://localhost:8080/avaliador-credito?cpf=04588236698
+
+
+> Realizar avaliação do cliente
+- POST
+- http://localhost:8080/avaliador-credito
+```
+{
+    "cpf": "04588236698",
+    "renda": 5000.00
+}
+```
+### Vai para a fila
+> Solicita cartão
+- POST
+- http://localhost:8080/avaliador-credito
+```
+{
+    "idCartao": "1",
+    "cpf": "04588236698",
+    "endereco": "rua joão paulo, nº 125",
+}
+```

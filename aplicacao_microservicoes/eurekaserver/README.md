@@ -20,3 +20,7 @@
 > Listar cliente
 - GET
 - http://localhost:8080/clientes
+
+## Atalhos
+- Cria variavél: *ctrl + alt +v*
+- Em cima da classe que não existe: *alt + enter*

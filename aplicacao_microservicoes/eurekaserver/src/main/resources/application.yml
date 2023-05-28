@@ -6,7 +6,7 @@ spring:
 server:
   port: 8761
 
-# para não se registrar com o eureka, não para a aplicação, mas os clientes faram isso.
+# para nÃ£o se registrar com o eureka, nÃ£o para a aplicaÃ§Ã£o, mas os clientes faram isso.
 eureka:
   client:
     register-with-eureka: false

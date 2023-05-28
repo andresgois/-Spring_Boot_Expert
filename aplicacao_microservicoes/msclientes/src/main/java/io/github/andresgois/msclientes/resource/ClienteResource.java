@@ -4,6 +4,9 @@ import io.github.andresgois.msclientes.domain.Cliente;
 import io.github.andresgois.msclientes.resource.representation.ClienteSaveRequest;
 import io.github.andresgois.msclientes.service.ClienteService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -14,6 +17,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("clientes")
 @RequiredArgsConstructor
+@Slf4j
 public class ClienteResource {
 
     private final ClienteService clienteService;

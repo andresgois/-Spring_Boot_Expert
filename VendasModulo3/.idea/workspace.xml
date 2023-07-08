@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13836cff-8129-4251-a636-5f786732d3b6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/VendasM3/target/classes/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/VendasM3/target/classes/application-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendasM3/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/VendasM3/target/classes/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TDD/teste-tdd/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,8 +98,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.io.gtihub.andresgois.security.jwt.JwtService" />
       <item itemvalue="Application.VendasApplication" />
+      <item itemvalue="Application.io.gtihub.andresgois.security.jwt.JwtService" />
     </list>
     <recent_temporary>
       <list>

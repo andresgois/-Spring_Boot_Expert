@@ -3,12 +3,7 @@ package br.andresgois.github.io.domain;
 import java.io.Serializable;
 import java.util.Objects;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -21,6 +16,8 @@ public class Livro  implements Serializable {
     private Integer id;
     private String titulo;
     private String nome_aut;
+
+    @Column(name = "texto", length = 200000)
     private String texto;
     
     @JsonIgnore // ignora a chamada recursiva

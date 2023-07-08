@@ -27,8 +27,13 @@ public class LivroService {
     
     public List<Livro> findAll(Integer cat) {
         //return livroRepository.findAll();
-        categoriaService.findById(cat);
-        return livroRepository.findAllByCategoria(cat);
+        System.out.println("cat: "+cat);
+        if(cat > 0){
+            categoriaService.findById(cat);
+            return livroRepository.findAllByCategoria(cat);
+        }
+
+        return livroRepository.findAll();
     }
 
     public Livro create(Livro obj) {
@@ -39,13 +44,14 @@ public class LivroService {
     public Livro update(Integer id, Livro livro) {
         Livro newObj = findLivroById(id);
         updateData(newObj, livro);
-        return livroRepository.save(livro);
+        return livroRepository.save(newObj);
     }
 
     private void updateData(Livro newObj, Livro livro) {
         newObj.setTitulo(livro.getTitulo());
         newObj.setNome_aut(livro.getNome_aut());
         newObj.setTexto(livro.getTexto());
+        newObj.setCategoria(newObj.getCategoria());
     }
     
     public Livro createComCategoria(Integer id, Livro obj) {

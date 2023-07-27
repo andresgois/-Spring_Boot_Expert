@@ -1,13 +1,5 @@
 spring:
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/criptografia_senha
-    username: postgres
-    password: 123456
-  jpa:
-    show-sql: false
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
+  config:
+    activate:
+      on-profile:
+        - test
